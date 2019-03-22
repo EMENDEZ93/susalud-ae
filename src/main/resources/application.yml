@@ -13,11 +13,6 @@ spring:
       enabled: true
       path: /h2    
   application:
-    name: eurekaclient      
-
-eureka:
-   client:
-      serviceUrl:
-         defaultZone: http://localhost:8761/eureka
-      instance:
-      preferIpAddress: true
+    name: susalud-ae      
+      
+      
