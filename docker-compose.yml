@@ -1,0 +1,22 @@
+version: '3.6'
+  
+services:
+  susalud-ae:
+    build: .
+    ports:
+      - 2223:2223
+    environment:
+      - example=my value  
+    volumes:
+      - javatmp:/tmp
+    networks:
+      - susalud_
+          
+networks:
+  susalud_:
+    external:
+      name: susalud_network    
+        
+volumes:
+  # default dir /var/lib/docker/volumes
+  javatmp:
