@@ -48,7 +48,7 @@ public class UsuarioEntidad {
 	@Size(min = 6, max = 100)
 	private String contrasena;
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "usuario_roles", joinColumns = @JoinColumn(name = "usuario_entidad_id"), inverseJoinColumns = @JoinColumn(name = "roles_id"))
 	private Set<RolEntidad> roles = new HashSet<>();
 

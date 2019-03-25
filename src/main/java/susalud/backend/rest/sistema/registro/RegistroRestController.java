@@ -3,6 +3,7 @@ package susalud.backend.rest.sistema.registro;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +23,7 @@ public class RegistroRestController {
 	private RegistroServicio registroServicio;
 	
 	@PostMapping
+	@PreAuthorize("hasRole('ADMIN')")
 	public void registrarUsuario(@Valid @RequestBody UsuarioDto usuarioDto) throws SistemaException {
 		registroServicio.registrarUsuario(usuarioDto);
 	}

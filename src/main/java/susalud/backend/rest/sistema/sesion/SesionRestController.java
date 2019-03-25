@@ -25,5 +25,5 @@ public class SesionRestController {
 	public ResponseEntity<?> autenticacion(@Valid @RequestBody LoginDto loginDto) {
 		return SesionService.autenticacion(loginDto);
 	}
-	
+
 }
